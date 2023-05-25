@@ -1,5 +1,6 @@
 from polaris import TestGroup
 from polaris.ocean.tests.global_convergence.cosine_bell import CosineBell
+from polaris.ocean.tests.global_convergence.geostrophic import Geostrophic
 
 
 class GlobalConvergence(TestGroup):
@@ -17,3 +18,6 @@ class GlobalConvergence(TestGroup):
         for icosahedral in [False, True]:
             self.add_test_case(CosineBell(test_group=self,
                                           icosahedral=icosahedral))
+        for icosahedral in [False, True]:
+            self.add_test_case(Geostrophic(test_group=self,
+                                           icosahedral=icosahedral))
